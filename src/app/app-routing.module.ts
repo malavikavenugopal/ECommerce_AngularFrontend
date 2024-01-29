@@ -14,7 +14,7 @@ const routes: Routes = [
   {path:"",component:AllProductsComponent},
   {path:"cart",component:CartComponent},
   {path:"wishlist",component:WishlistComponent},
-  {path:"view-products/:id",component:ViewProductsComponent},
+  {path:"view/:id",component:ViewProductsComponent},
   {path:"**",component:PagenotfoundComponent},
   {path:"checkout",component:CheckoutComponent},
 

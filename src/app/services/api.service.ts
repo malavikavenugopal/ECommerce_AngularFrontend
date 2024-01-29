@@ -20,7 +20,9 @@ export class ApiService {
   loginApi(user:any) {
     return this.http.post(`${this.server_URL}/login`,user)
   }
-  
+  getProductApi(id:any) {
+    return this.http.get(`${this.server_URL}/get-product/${id}`)
+  }
   
 
 
