@@ -1,0 +1,49 @@
+
+<app-header></app-header> 
+<!-- Hero 5 - Bootstrap Brain Component -->
+<section class="bsb-hero-5 px-3 bsb-overlay" style="background-image: url('https://media.gettyimages.com/id/489803256/photo/below-view-of-young-cheerful-family-in-shopping.jpg?s=612x612&w=0&k=20&c=KcmaBiURs_ChPFCdvNKhmTD5AVEiUxM4MmANitqioz4=');">
+    <div class="container">
+      <div class="row justify-content-md-center align-items-center">
+        <div class="col-12 col-md-11 col-lg-9 col-xl-8 col-xxl-7 "   >
+          <h2 class="display-1 text-white text-center fw-bold mb-4">Dream of Success</h2>
+          <p class="lead text-white text-center mb-5 d-flex justify-content-sm-center">
+            <span class="col-12 col-sm-10 col-md-8 col-xxl-7">There are three ways to ultimate success: The first way is to be kind. The second way is to be kind. The third way is to be kind.</span>
+          </p>
+          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <button type="button" class="btn bsb-btn-2xl btn-outline-light">Free Consultation</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+          
+<main>
+    <div class="container-fluid bg-trasparent my-4 p-3" style="position: relative;">
+        <div class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3">
+            <div class="col" *ngFor="let product of allProducts">
+
+                <div class="card h-100 shadow-sm">
+                    <img [src]="product.image"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h4 class="card-title">{{product.title.slice(0,20)}}</h4>
+
+                        <div class="clearfix mb-3">
+                            <span class="float-start badge rounded-pill bg-dark" > <i (click)="addtoWishlist(product)" class="fa-solid fa-heart text-danger"></i></span> 
+                            <span class="float-start badge rounded-pill bg-dark ms-2"> <i (click)="addtoCart(product)" class="fa-solid fa-cart-shopping "></i></span>
+                            <span class="float-end price-hp">{{product.price}}&euro;</span>
+                        </div>
+                        <h5 class="card-title">{{product.description}}</h5>
+                        <div class="text-center my-4">
+                            <a  class="btn btn-warning" routerLink="view-products/{{product.id}}">Check product</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          
+
+            
+           
+        </div>
+    </div>
+</main>

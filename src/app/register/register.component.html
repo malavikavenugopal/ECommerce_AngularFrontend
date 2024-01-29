@@ -1,0 +1,81 @@
+<!-- Section: Design Block -->
+<section class="text-center text-lg-start">
+  <style>
+    .cascading-right {
+      margin-right: -50px;
+    }
+
+    @media (max-width: 991.98px) {
+      .cascading-right {
+        margin-right: 0;
+      }
+    }
+  </style>
+
+  <!-- Jumbotron -->
+  <div class="container py-4">
+    <div class="row g-0   align-items-center">
+      <div class="col-lg-6 mb-5 mb-lg-0">
+        <div class="card cascading-right" style="
+              background: hsla(0, 0%, 100%, 0.55);
+              backdrop-filter: blur(30px);
+              ">
+          <div class="card-body p-5 shadow-5 ">
+            <h2 class="fw-bold mb-5">Sign up now</h2>
+            <form [formGroup]="registerForm" (ngSubmit)="register()">
+              <!-- 2 column grid layout with text inputs for the first and last names -->
+              <div class="form-outline mb-4">
+
+                <input type="text" id="form3Example1" class="form-control" formControlName="username" name="username" />
+                <div class="d-flex justify-content-between">
+                  <label class="form-label" for="form3Example1">User name</label>
+                  <span *ngIf="registerForm.get('username')?.errors && registerForm.get('username')?.touched"
+                    class="text-danger" style="font-size: 12px;">Invalid Username</span>
+                </div>
+
+              </div>
+
+              <!-- Email input -->
+              <div class="form-outline mb-4">
+                <input type="email" id="form3Example3" class="form-control" formControlName="email" name="email" />
+                <div class="d-flex justify-content-between">
+                  <label class="form-label" for="form3Example3">Email address</label>
+                  <span *ngIf="registerForm.get('email')?.errors && registerForm.get('email')?.touched"
+                    class="text-danger" style="font-size: 12px;">Invalid Email Address</span>
+                </div>
+              </div>
+
+              <!-- registerForm.get('email') if not errors gives null and have errors gives object -->
+
+              <!-- Password input -->
+              <div class="form-outline mb-4">
+                <input type="password" id="form3Example4" class="form-control" formControlName="password"
+                  name="password" />
+                <div class="d-flex justify-content-between">
+                  <label class="form-label" for="form3Example4">Password</label>
+                  <span *ngIf="registerForm.get('password')?.errors && registerForm.get('password')?.touched"
+                    class="text-danger" style="font-size: 12px;">Invalid Password</span>
+                </div>
+              </div>
+
+              <!-- Submit button -->
+              <button type="submit" style="background-color: rgb(139, 4, 132);color:white" class="btn btn-block mb-4">
+                Sign up
+              </button>
+
+
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 mb-5 mb-lg-0">
+        <img
+          src="https://img.freepik.com/free-photo/happy-beautiful-couple-posing-with-shopping-bags-violet_496169-2215.jpg?w=996&t=st=1705941679~exp=1705942279~hmac=dccacae344c44aff861fe71c1109501f7202953f92d10df5cd2ef45c81633625"
+          class="w-100 rounded-4 shadow-4" alt="" />
+      </div>
+    </div>
+  </div>
+  <!-- Jumbotron -->
+</section>
+<!-- Section: Design Block -->

@@ -1,0 +1,70 @@
+<!-- Section: Design Block -->
+<section class="text-center text-lg-start">
+    <style>
+      .cascading-right {
+        margin-right: -50px;
+      }
+  
+      @media (max-width: 991.98px) {
+        .cascading-right {
+          margin-right: 0;
+        }
+      }
+    </style>
+  
+    <!-- Jumbotron -->
+    <div class="container py-4 vh-100 d-flex justify-content-center ">
+      <div class="row g-0   align-items-center">
+        <div class="col-lg-6 mb-5 mb-lg-0">
+          <div class="card cascading-right" style="
+              background: hsla(0, 0%, 100%, 0.55);
+              backdrop-filter: blur(30px);
+              ">
+            <div class="card-body p-5 shadow-5 ">
+              <h2 class="fw-bold mb-5">Login now</h2>
+              <form [formGroup]="loginForm" (ngSubmit)="login()">
+                <!-- 2 column grid layout with text inputs for the first and last names -->
+               
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                  <input type="email" id="form3Example3" class="form-control" formControlName="email" name="email" />
+                  <div class="d-flex justify-content-between">
+                    <label class="form-label" for="form3Example3">Email address</label>
+                    <span *ngIf="loginForm.get('email')?.errors && loginForm.get('email')?.touched"
+                      class="text-danger" style="font-size: 12px;">Invalid Email Address</span>
+                  </div>
+                </div>
+  
+                <!-- registerForm.get('email') if not errors gives null and have errors gives object -->
+  
+                <!-- Password input -->
+                <div class="form-outline mb-4">
+                  <input type="password" id="form3Example4" class="form-control" formControlName="password"
+                    name="password" />
+                  <div class="d-flex justify-content-between">
+                    <label class="form-label" for="form3Example4">Password</label>
+                    <span *ngIf="loginForm.get('password')?.errors && loginForm.get('password')?.touched"
+                      class="text-danger" style="font-size: 12px;">Invalid Password</span>
+                  </div>
+                </div>
+  
+                <!-- Submit button -->
+                <button type="submit" style="background-color: rgb(139, 4, 132);color:white" class="btn btn-block mb-4">
+                  Sign up
+                </button>
+  
+  
+              </form>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-lg-6 mb-5 mb-lg-0">
+          <img height="550px" src="https://img.freepik.com/free-photo/one-woman-carrying-shopping-bag-from-boutique-generated-by-ai_188544-37931.jpg?t=st=1705943651~exp=1705947251~hmac=ed3f7c86431bf9d2bda83430ef9eb3e1e36f5c596d20b861b350ea42f9464461&w=1060" class="w-100 rounded-4 shadow-4"
+            alt="" />
+        </div>
+      </div>
+    </div>
+    <!-- Jumbotron -->
+  </section>
+  <!-- Section: Design Block -->
